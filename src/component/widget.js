@@ -5,6 +5,8 @@ import WidgetSeartch from "./widgetSeartch";
 import WidgetSidebar from "./widgetSidebar";
 import axios from "axios";
 import { quickSort } from "../services/quickSort";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Wigjet = () => {
   const [goods, setGoods] = useState([]);
@@ -14,12 +16,14 @@ const Wigjet = () => {
   const [categoriesMatched, setCategoriesMatched] = useState([]);
   const [isLoading, setIsloading] = useState(false);
 
-  console.log(goods)
+  console.log(goods);
 
   const handleChange = (data) => {
-    const dataTrimed = data.trimEnd().trimStart();
-    const dataSplited = dataTrimed.split(" ");
-    setdataSeartch(dataSplited);
+    if (data.replace(/ /g,'').length) {
+      const dataTrimed = data.trimEnd().trimStart();
+      const dataSplited = dataTrimed.split(" ");
+      setdataSeartch(dataSplited);
+    }
   };
 
   const RegExpFilter = (selectedGoodKey, word) => {
@@ -97,7 +101,12 @@ const Wigjet = () => {
       }, 0);
       return { name: c, value };
     });
-    setIsloading(true);
+    
+    if(arryFiltered.length>0){
+      setIsloading(true);
+    }else{
+      toast('В магазине нет данного асортимента');
+    }
     return categoriesMatced;
   };
 
@@ -130,10 +139,8 @@ const Wigjet = () => {
       setCategories(res.data);
     });
   }, []);
-  
-  const handleClik = () => {
-    
-  } 
+
+  const handleClik = () => {};
 
   return (
     <section className={style.widget}>
@@ -141,11 +148,12 @@ const Wigjet = () => {
         <WidgetSeartch onChange={handleChange} onTupp={filterGoods} />
         {isLoading && (
           <div className={style.widget__main}>
-            <WidgetSidebar data={categoriesMatched} handleClik={handleClik}/>
+            <WidgetSidebar data={categoriesMatched} handleClik={handleClik} />
             <WidgetProduct data={goodsfiltered} />
           </div>
         )}
       </div>
+      <ToastContainer />
     </section>
   );
 };
