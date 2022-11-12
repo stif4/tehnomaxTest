@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tehnomaxTest/static/css/main.d4557ccd.css",
+    "main.js": "/tehnomaxTest/static/js/main.5f4316db.js",
+    "index.html": "/tehnomaxTest/index.html",
+    "main.d4557ccd.css.map": "/tehnomaxTest/static/css/main.d4557ccd.css.map",
+    "main.5f4316db.js.map": "/tehnomaxTest/static/js/main.5f4316db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d4557ccd.css",
+    "static/js/main.5f4316db.js"
+  ]
+}
