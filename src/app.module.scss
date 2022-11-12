@@ -1,0 +1,60 @@
+.container {
+  max-width: 1710px; // по макету ширина 1100px, но так как не будет брейк поинтов, то делаем отступ от краев +30px
+  padding: 0px 15px; // невелируем задданый отступ в 30px по краям
+  margin: 0 auto; //центруем контенер
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.page {
+  font-family: Lato;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    // background-color: rgb(231, 231, 231);
+}
+
+.header{
+    width: 100%;    
+    background-color: #e45203;
+    display: flex;
+    align-items: center;
+    a{
+      padding: 2vw 4vw;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2vw;
+      color: white;
+    }
+}
+
+/*Обнуление*/
+*{padding: 0; margin: 0; border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
